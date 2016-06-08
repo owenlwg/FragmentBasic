@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+<GridLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:columnCount="4">
+    <Button
+        android:text="addFrag1"
+        android:id="@+id/button"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:text="addFrag2"
+        android:id="@+id/button2"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:text="addFrag3"
+        android:id="@+id/button3"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:text="addFrag4"
+        android:id="@+id/button4"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:text="detachFrag3"
+        android:id="@+id/button9"
+        android:textAllCaps="false"/>
+    <Button
+        android:text="attachFrag3"
+        android:id="@+id/button10"
+        android:textAllCaps="false"/>
+    <Button
+        android:text="detachFrag2"
+        android:id="@+id/button11"
+        android:textAllCaps="false"/>
+    <Button
+        android:text="attachFrag2"
+        android:id="@+id/button12"
+        android:textAllCaps="false"/>
+
+</GridLayout>
+    <TextView
+        android:id="@+id/tv_isadded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_fragments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_backstack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

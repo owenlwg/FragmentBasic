@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.owen.fragmentbasic"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ActivityA" android:parentActivityName=".MainActivity" android:label="A"/>
+        <activity android:name=".MainActivityB" android:label="MainB"/>
+        <activity android:name=".ActivityB1" android:label="B1" android:parentActivityName=".MainActivityB"/>
+        <activity android:name=".ActivityB2" android:label="B2" android:parentActivityName=".MainActivityB"/>
+        <activity android:name=".ActivityB3" android:label="B3" android:parentActivityName=".MainActivityB"/>
+        <activity android:name=".ActivityB4" android:label="B4" android:parentActivityName=".MainActivityB"/>
+    </application>
+
+</manifest>
