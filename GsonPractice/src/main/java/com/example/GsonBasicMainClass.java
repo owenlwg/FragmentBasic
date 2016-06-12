@@ -1,16 +1,17 @@
 package com.example;
 
 
-import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.StringReader;
+import java.io.StringWriter;
 
 public class GsonBasicMainClass {
     public static void main(String[] args) {
-        //1.json解析
+
+        //1.json反序列化，使用JsonReader解析，数组的解析看doc
         String json = "{\"name\":\"owen\", \"age\":28, \"email_address\":\"xsxxx@163.com\"}";
         Person person = new Person();
         JsonReader reader = new JsonReader(new StringReader(json));
@@ -42,8 +43,31 @@ public class GsonBasicMainClass {
             }
         }
 
+        System.out.println(person);
 
-        //2.
+        //2.json序列化，使用JsonWriter处理，数组的解析看doc
+        Person person1 = new Person("Moon", 25);
+        person1.setEmail("moon@gmail.com");
+        StringWriter stringWriter = new StringWriter();
+        JsonWriter jsonWriter = new JsonWriter(stringWriter);
+
+        try {
+            jsonWriter.beginObject();
+            jsonWriter.name("name").value(person1.getName())
+                    .name("age").value(person1.getAge())
+                    .name("email").value(person1.getEmail());
+            jsonWriter.endObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                jsonWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println(stringWriter.toString());
 
     }
 }

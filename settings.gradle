@@ -1,1 +1,1 @@
-include ':app', ':GsonPractice'
+include ':FragmentPractice', ':GsonPractice'
