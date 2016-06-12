@@ -5,6 +5,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
 
@@ -45,11 +46,12 @@ public class GsonBasicMainClass {
 
         System.out.println(person);
 
+
         //2.json序列化，使用JsonWriter处理，数组的解析看doc
         Person person1 = new Person("Moon", 25);
         person1.setEmail("moon@gmail.com");
         StringWriter stringWriter = new StringWriter();
-        JsonWriter jsonWriter = new JsonWriter(stringWriter);
+        JsonWriter jsonWriter = new JsonWriter(new OutputStreamWriter(System.out));
 
         try {
             jsonWriter.beginObject();
@@ -67,7 +69,7 @@ public class GsonBasicMainClass {
             }
         }
 
-        System.out.println(stringWriter.toString());
+//        System.out.println(stringWriter.toString());
 
     }
 }
